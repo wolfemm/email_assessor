@@ -5,19 +5,19 @@ require "yaml"
 require "json"
 require "net/http"
 
-whitelisted_emails = %w(poczta.onet.pl fastmail.fm hushmail.com naver.com)
+whitelisted_domains = %w(poczta.onet.pl fastmail.fm hushmail.com naver.com)
 
-existing_emails = File.readlines("vendor/disposable_emails.txt")
+existing_domains = File.readlines("vendor/disposable_domains.txt")
 
-puts existing_emails.size
+puts existing_domains.size
 
 url = "https://raw.githubusercontent.com/FGRibreau/mailchecker/master/list.json"
 resp = Net::HTTP.get_response(URI.parse(url))
 
-remote_emails = JSON.parse(resp.body).flatten - whitelisted_emails
+remote_domains = JSON.parse(resp.body).flatten - whitelisted_domains
 
-puts "New emails found: #{remote_emails.join(', ')}"
+puts "New domains found: #{(remote_domains - existing_domains).join(', ')}"
 
-result_emails = (existing_emails + remote_emails).map(&:strip).uniq.sort
+result_domains = (existing_domains + remote_domains).map(&:strip).uniq.sort
 
-File.open("vendor/disposable_emails.txt", "w") { |f| f.write result_emails.join("\n") }
+File.open("vendor/disposable_domains.txt", "w") { |f| f.write result_domains.join("\n") }

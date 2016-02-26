@@ -46,15 +46,15 @@ describe ValidEmail2 do
     end
   end
 
-  describe "disposable emails" do
-    it "should be valid when email is not in the list of disposable emails" do
+  describe "disposable domains" do
+    it "should be valid when email is not in the list of disposable domains" do
       user = TestUserDisallowDisposable.new(email: "foo@gmail.com")
       user.valid?.should be_true
     end
 
-    it "should be invalid when email is in the list of disposable emails" do
-      disposable_email = File.open(described_class::DISPOSABLE_EMAILS_FILE, &:readline)
-      user = TestUserDisallowDisposable.new(email: "foo@#{disposable_email}")
+    it "should be invalid when email is in the list of disposable domains" do
+      disposable_domain = File.open(described_class::DISPOSABLE_DOMAINS_FILE, &:readline)
+      user = TestUserDisallowDisposable.new(email: "foo@#{disposable_domain}")
       user.valid?.should be_false
     end
   end
