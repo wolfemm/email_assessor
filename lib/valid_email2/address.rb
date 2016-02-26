@@ -30,7 +30,7 @@ module ValidEmail2
     end
 
     def disposable?
-      valid? && ValidEmail2.disposable_emails.include?(address.domain)
+      valid? && ValidEmail2.domain_is_disposable?(address.domain)
     end
 
     def blacklisted?

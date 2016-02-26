@@ -53,7 +53,8 @@ describe ValidEmail2 do
     end
 
     it "should be invalid when email is in the list of disposable emails" do
-      user = TestUserDisallowDisposable.new(email: "foo@#{ValidEmail2.disposable_emails.first}")
+      disposable_email = File.open(described_class::DISPOSABLE_EMAILS_FILE, &:readline)
+      user = TestUserDisallowDisposable.new(email: "foo@#{disposable_email}")
       user.valid?.should be_false
     end
   end

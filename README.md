@@ -4,7 +4,7 @@
 
 Validate emails with the help of the `mail` gem instead of some clunky regexp.
 Aditionally validate that the domain has a MX record.
-Optionally validate against a static [list of disposable email services](vendor/disposable_emails.yml).
+Optionally validate against a static [list of disposable email services](vendor/disposable_emails.txt).
 
 
 ### Why?
@@ -78,7 +78,7 @@ address.valid_mx? => true
 ### Test environment
 
 If you are validating `mx` then your specs will fail without an internet connection.
-It is a good idea to stub out that validation in your test environment.  
+It is a good idea to stub out that validation in your test environment.
 Do so by adding this in your `spec_helper`:
 ```ruby
 config.before(:each) do
