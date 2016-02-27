@@ -4,7 +4,8 @@
 
 A fork of [ValidEmail2](https://github.com/lisinge/valid_email2)
 
-ValidEmail2...
+ValidEmail2:
+
 * Validates emails with the help of the `mail` gem instead of some clunky regexp.
 * Aditionally validates that the domain has a MX record.
 * Optionally validates against a static [list of disposable email services](vendor/disposable_domains.txt).
@@ -12,11 +13,11 @@ ValidEmail2...
 
 ### Why?
 
-ValidEmail2 offers very comprehensive email validation, but it had a few pitfalls.
+ValidEmail2 offers very comprehensive email validation, but it has a few pitfalls.
 
-For starters, it loaded the entire list of blacklisted/disposable email domains into memory. In a never ending battle against spam, loading such an extremely large (and ever-growing) array into memory is far from ideal. Instead, this gem reads a text file line-by-line.
+For starters, it loads the entire list of blacklisted/disposable email domains into memory from a YAML file. In a never ending battle against spam, loading such an extremely large (and ever-growing) array into memory is far from ideal. Instead, this gem reads a text file line-by-line.
 
-Another pitfall is that subdomains are able to bypass the disposable and blacklist checks in ValidEmail2. This gem checks if the disposable/blacklisted domains are contained within the email's domain, preventing subdomains from masking an email that would otherwise be blocked.
+Another pitfall is that subdomains are able to bypass the disposable and blacklist checks in ValidEmail2. This gem checks if a given domain *ends* with a blacklisted/disposable domain, preventing subdomains from masking an email that would otherwise be considered invalid.
 
 
 ## Installation
