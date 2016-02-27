@@ -15,9 +15,9 @@ ValidEmail2:
 
 ValidEmail2 offers very comprehensive email validation, but it has a few pitfalls.
 
-For starters, it loads the entire list of blacklisted/disposable email domains into memory from a YAML file. In a never ending battle against spam, loading such an extremely large (and ever-growing) array into memory is far from ideal. Instead, this gem reads a text file line-by-line.
+For starters, it loads the entire list of blacklisted/disposable email domains into memory from a YAML file. In a never ending battle against spam, loading such an extremely large (and ever-growing) array into memory is far from ideal. Instead, this fork reads a text file line-by-line.
 
-Another pitfall is that subdomains are able to bypass the disposable and blacklist checks in ValidEmail2. This gem checks if a given domain *ends* with a blacklisted/disposable domain, preventing subdomains from masking an email that would otherwise be considered invalid.
+Another pitfall is that subdomains are able to bypass the disposable and blacklist checks in ValidEmail2. This fork checks if a given domain *ends* with a blacklisted/disposable domain, preventing subdomains from masking an email that would otherwise be considered invalid.
 
 
 ## Installation
@@ -25,7 +25,7 @@ Another pitfall is that subdomains are able to bypass the disposable and blackli
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "valid_email2"
+gem "valid_email2", git: "https://github.com/wolfemm/valid_email2.git"
 ```
 
 And then execute:
