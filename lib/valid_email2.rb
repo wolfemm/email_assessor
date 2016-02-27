@@ -17,6 +17,7 @@ module ValidEmail2
   def self.domain_in_file?(domain, filename)
     return false unless File.exists?(filename)
 
+    domain = domain.downcase
     domain_matched = false
 
     File.open(filename).each do |line|
