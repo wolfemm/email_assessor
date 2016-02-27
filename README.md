@@ -2,19 +2,22 @@
 [![Build Status](https://travis-ci.org/lisinge/valid_email2.png?branch=master)](https://travis-ci.org/lisinge/valid_email2)
 [![Gem Version](https://badge.fury.io/rb/valid_email2.png)](http://badge.fury.io/rb/valid_email2)
 
-Validate emails with the help of the `mail` gem instead of some clunky regexp.
-Aditionally validate that the domain has a MX record.
-Optionally validate against a static [list of disposable email services](vendor/disposable_domains.txt).
+A fork of [ValidEmail2](https://github.com/lisinge/valid_email2)
+
+ValidEmail2...
+* Validates emails with the help of the `mail` gem instead of some clunky regexp.
+* Aditionally validates that the domain has a MX record.
+* Optionally validates against a static [list of disposable email services](vendor/disposable_domains.txt).
 
 
 ### Why?
 
-There are lots of other gems and libraries that validates email addresses but most of them use some clunky regexp.
-I also saw a need to be able to validate that the email address is not coming from a "disposable email" provider.
+ValidEmail2 offers very comprehensive email validation, but it had a few pitfalls.
 
-### Is it production ready?
+For starters, it loaded the entire list of blacklisted/disposable email domains into memory. In a never ending battle against spam, loading such an extremely large (and ever-growing) array into memory is far from ideal. Instead, this gem reads a text file line-by-line.
 
-Yes, it is used in several production apps.
+Another pitfall is that subdomains are able to bypass the disposable and blacklist checks in ValidEmail2. This gem checks if the disposable/blacklisted domains are contained within the email's domain, preventing subdomains from masking an email that would otherwise be blocked.
+
 
 ## Installation
 
