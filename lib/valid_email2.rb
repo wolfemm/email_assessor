@@ -8,9 +8,8 @@ module ValidEmail2
     domain_in_file?(domain, DISPOSABLE_DOMAINS_FILE)
   end
 
-  def self.blacklist
-    blacklist_file = "vendor/blacklist.yml"
-    @@blacklist ||= File.exists?(blacklist_file) ? YAML.load_file(File.expand_path(blacklist_file)) : []
+  def self.domain_is_blacklisted?(domain)
+    domain_in_file?(domain, BLACKLISTED_DOMAINS_FILE)
   end
 
   protected

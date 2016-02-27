@@ -34,7 +34,7 @@ module ValidEmail2
     end
 
     def blacklisted?
-      valid? && ValidEmail2.blacklist.include?(address.domain)
+      valid? && ValidEmail2.domain_is_blacklisted?(address.domain)
     end
 
     def valid_mx?

@@ -59,14 +59,15 @@ describe ValidEmail2 do
     end
   end
 
-  describe "blacklisted emails" do
-    it "should be valid when email is not in the blacklist" do
+  describe "blacklisted domains" do
+    it "should be valid when email domain is not in the blacklist" do
       user = TestUserDisallowBlacklisted.new(email: "foo@gmail.com")
       user.valid?.should be_true
     end
 
-    it "should be invalid when email is in the blacklist" do
-      user = TestUserDisallowBlacklisted.new(email: "foo@#{ValidEmail2.blacklist.first}")
+    it "should be invalid when email domain is in the blacklist" do
+      blacklisted_domain = File.open(described_class::BLACKLISTED_DOMAINS_FILE, &:readline)
+      user = TestUserDisallowBlacklisted.new(email: "foo@#{blacklisted_domain}")
       user.valid?.should be_false
     end
   end
