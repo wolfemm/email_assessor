@@ -47,27 +47,38 @@ describe ValidEmail2 do
   end
 
   describe "disposable domains" do
+    let(:disposable_domain) { disposable_domain = File.open(described_class::DISPOSABLE_DOMAINS_FILE, &:readline) }
+
     it "should be valid when email is not in the list of disposable domains" do
       user = TestUserDisallowDisposable.new(email: "foo@gmail.com")
       user.valid?.should be_true
     end
 
     it "should be invalid when email is in the list of disposable domains" do
-      disposable_domain = File.open(described_class::DISPOSABLE_DOMAINS_FILE, &:readline)
       user = TestUserDisallowDisposable.new(email: "foo@#{disposable_domain}")
+      user.valid?.should be_false
+    end
+
+    it "should be invalid when email is in the list of disposable domains regardless of subdomain" do
+      user = TestUserDisallowDisposable.new(email: "foo@abc123.#{disposable_domain}")
       user.valid?.should be_false
     end
   end
 
   describe "blacklisted domains" do
+    let(:blacklisted_domain) { File.open(described_class::BLACKLISTED_DOMAINS_FILE, &:readline) }
     it "should be valid when email domain is not in the blacklist" do
       user = TestUserDisallowBlacklisted.new(email: "foo@gmail.com")
       user.valid?.should be_true
     end
 
     it "should be invalid when email domain is in the blacklist" do
-      blacklisted_domain = File.open(described_class::BLACKLISTED_DOMAINS_FILE, &:readline)
       user = TestUserDisallowBlacklisted.new(email: "foo@#{blacklisted_domain}")
+      user.valid?.should be_false
+    end
+
+    it "should be invalid when email domain is in the blacklist regardless of subdomain" do
+      user = TestUserDisallowBlacklisted.new(email: "foo@abc123.#{blacklisted_domain}")
       user.valid?.should be_false
     end
   end
