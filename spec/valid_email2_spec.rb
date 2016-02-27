@@ -34,6 +34,11 @@ describe ValidEmail2 do
       user.valid?.should be_false
     end
 
+    it "should be invalid when email contains a trailing symbol" do
+      user = TestUser.new(email: "foo@bar.com/")
+      user.valid?.should be_false
+    end
+
     it "should be invalid if Mail::AddressListsParser raises exception" do
       user = TestUser.new(email: "foo@gmail.com")
       Mail::Address.stub(:new).and_raise(Mail::Field::ParseError.new(nil, nil, nil))
