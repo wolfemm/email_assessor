@@ -20,7 +20,7 @@ module ValidEmail2
     domain_matched = false
 
     File.open(filename).each do |line|
-      if domain.include?(line.chomp)
+      if domain.end_with?(line.chomp)
         domain_matched = true
         break
       end
