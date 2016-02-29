@@ -15,7 +15,7 @@ module EmailAssessor
   protected
 
   def self.domain_in_file?(domain, filename)
-    return false unless File.exists?(filename)
+    return false unless filename.present? && File.exists?(filename)
 
     domain = domain.downcase
     domain_matched = false
