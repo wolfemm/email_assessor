@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "email_assessor"
   spec.version       = EmailAssessor::VERSION
   spec.summary       = "Advanced ActiveModel email validation"
-  spec.description   = "ActiveModel email validation with MX lookups, domain blacklisting and disposable email-domain blocking"
+  spec.description   = "Advanced ActiveModel email validation with MX lookups, domain blacklisting and disposable email blocking"
 
   spec.license = "MIT"
 
