@@ -1,17 +1,19 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "valid_email2/version"
+require "email_assessor/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "valid_email2"
-  spec.version       = ValidEmail2::VERSION
-  spec.authors       = ["Micke Lisinge"]
-  spec.email         = ["lisinge@gmail.com"]
-  spec.description   = %q{ActiveModel validation for email. Including MX lookup and disposable email blacklist}
-  spec.summary       = %q{ActiveModel validation for email. Including MX lookup and disposable email blacklist}
-  spec.homepage      = "https://github.com/lisinge/valid_email2"
-  spec.license       = "MIT"
+  spec.name          = "email_assessor"
+  spec.version       = EmailAssessor::VERSION
+  spec.summary       = "Advanced ActiveModel email validation"
+  spec.description   = "ActiveModel email validation with MX lookups, domain blacklisting and disposable email-domain blocking"
+
+  spec.license = "MIT"
+
+  spec.author   = "Michael Wolfe Millard"
+  spec.email    = "wolfemm.development@gmail.com"
+  spec.homepage = "https://github.com/wolfemm/email_assessor"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }

@@ -1,4 +1,4 @@
-require "valid_email2/address"
+require "email_assessor/address"
 require "active_model"
 require "active_model/validations"
 
@@ -11,7 +11,7 @@ class EmailValidator < ActiveModel::EachValidator
     return unless value.present?
     options = default_options.merge(self.options)
 
-    address = ValidEmail2::Address.new(value)
+    address = EmailAssessor::Address.new(value)
 
     error(record, attribute) && return unless address.valid?
 

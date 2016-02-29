@@ -1,4 +1,4 @@
-Copyright (c) 2013 Micke Lisinge
+Copyright for portions of this project are held by Micke Lisinge, 2013, as part of valid_email2. All other copyright are held by Michael Wolfe Millard, 2016.
 
 MIT License
 

@@ -16,7 +16,7 @@ class TestUserDisallowBlacklisted < TestModel
   validates :email, email: { blacklist: true }
 end
 
-describe ValidEmail2 do
+describe EmailAssessor do
   describe "basic validation" do
     subject(:user) { TestUser.new(email: "") }
 

@@ -1,6 +1,6 @@
-require "valid_email2/email_validator"
+require "email_assessor/email_validator"
 
-module ValidEmail2
+module EmailAssessor
   DISPOSABLE_DOMAINS_FILE = File.expand_path("../../vendor/disposable_domains.txt", __FILE__)
   BLACKLISTED_DOMAINS_FILE = File.expand_path("../../vendor/blacklisted_domains.txt", __FILE__)
 

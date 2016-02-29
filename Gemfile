@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in valid_email2.gemspec
+# Specify your gem's dependencies in email_assessor.gemspec
 gemspec

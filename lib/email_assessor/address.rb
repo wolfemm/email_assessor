@@ -1,8 +1,8 @@
-require "valid_email2"
+require "email_assessor"
 require "resolv"
 require "mail"
 
-module ValidEmail2
+module EmailAssessor
   class Address
     attr_accessor :address
 
@@ -30,11 +30,11 @@ module ValidEmail2
     end
 
     def disposable?
-      valid? && ValidEmail2.domain_is_disposable?(address.domain)
+      valid? && EmailAssessor.domain_is_disposable?(address.domain)
     end
 
     def blacklisted?
-      valid? && ValidEmail2.domain_is_blacklisted?(address.domain)
+      valid? && EmailAssessor.domain_is_blacklisted?(address.domain)
     end
 
     def valid_mx?
