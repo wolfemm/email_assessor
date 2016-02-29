@@ -10,7 +10,7 @@ module EmailAssessor
   end
 
   def self.configuration
-    @@configuration ||= Configuration.new
+    @configuration ||= Configuration.new
   end
 
   def self.configure
