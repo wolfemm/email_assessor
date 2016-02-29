@@ -8,6 +8,10 @@ class TestModel
     @attributes = attributes
   end
 
+  def email=(email)
+    @attributes[:email] = email
+  end
+
   def read_attribute_for_validation(key)
     @attributes[key]
   end
