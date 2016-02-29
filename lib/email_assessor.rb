@@ -2,7 +2,7 @@ require "email_assessor/email_validator"
 
 module EmailAssessor
   DISPOSABLE_DOMAINS_FILE = File.expand_path("../../vendor/disposable_domains.txt", __FILE__)
-  BLACKLISTED_DOMAINS_FILE = File.expand_path("../../vendor/blacklisted_domains.txt", __FILE__)
+  BLACKLISTED_DOMAINS_FILE = File.expand_path("vendor/blacklisted_domains.txt")
 
   def self.domain_is_disposable?(domain)
     domain_in_file?(domain, DISPOSABLE_DOMAINS_FILE)
