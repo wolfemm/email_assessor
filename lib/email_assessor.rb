@@ -28,13 +28,13 @@ module EmailAssessor
 
   protected
 
-  def self.domain_in_file?(domain, filename)
-    return false unless filename.present? && File.exists?(filename)
+  def self.domain_in_file?(domain, file_name)
+    return false unless file_name.present? && File.exists?(file_name)
 
     domain = domain.downcase
     domain_matched = false
 
-    File.open(filename).each do |line|
+    File.open(file_name).each do |line|
       if domain.end_with?(line.chomp)
         domain_matched = true
         break
