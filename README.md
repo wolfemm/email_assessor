@@ -1,4 +1,4 @@
-# ValidEmail2
+# EmailAssessor
 [![Build Status](https://travis-ci.org/wolfemm/email_assessor.png?branch=master)](https://travis-ci.org/wolfemm/email_assessor)
 [![Gem Version](https://badge.fury.io/rb/email_assessor.png)](http://badge.fury.io/rb/email_assessor)
 
