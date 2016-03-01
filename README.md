@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/wolfemm/email_assessor.png?branch=master)](https://travis-ci.org/wolfemm/email_assessor)
 [![Gem Version](https://badge.fury.io/rb/email_assessor.png)](http://badge.fury.io/rb/email_assessor)
 
-A fork of of the wonderful [ValidEmail2](https://github.com/lisinge/valid_email2) by [Micke Lisinge](https://github.com/lisinge).
+A fork of [Micke Lisinge](https://github.com/lisinge)'s [ValidEmail2](https://github.com/lisinge/valid_email2).
 
 ValidEmail2:
 
