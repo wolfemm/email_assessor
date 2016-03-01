@@ -22,10 +22,10 @@ describe EmailAssessor do
   let(:blacklist_user) { TestUserDisallowBlacklisted.new(email: "foo@gmail.com") }
   let(:mx_user) { TestUserMX.new(email: "foo@gmail.com") }
 
-  let(:blacklisted_domains_file_name) { File.expand_path("../fixtures/blacklisted_domains.txt", __FILE__) }
+  let(:blacklisted_domains_file_name) { described_class::BLACKLISTED_DOMAINS_FILE_NAME }
   let(:blacklisted_domain) { File.open(blacklisted_domains_file_name, &:readline) }
 
-  let(:disposable_domains_file_name) { described_class.configuration.disposable_domains_file_name }
+  let(:disposable_domains_file_name) { described_class::DISPOSABLE_DOMAINS_FILE_NAME }
   let(:disposable_domain) { File.open(disposable_domains_file_name, &:readline) }
 
   describe "basic validation" do
@@ -78,24 +78,10 @@ describe EmailAssessor do
       user.email = "foo@abc123.#{disposable_domain}"
       is_expected.to be_invalid
     end
-
-    it "should raise when the configured disposable domains file does not exist" do
-      described_class.configure do |config|
-        config.disposable_domains_file_name = "domains.txt"
-      end
-
-      expect { user.valid? }.to raise_error Errno::ENOENT
-    end
   end
 
   describe "blacklisted domains" do
     subject(:user) { blacklist_user }
-
-    before do
-      described_class.configure do |config|
-        config.blacklisted_domains_file_name = blacklisted_domains_file_name
-      end
-    end
 
     it "should be valid when email domain is not in the blacklist" do
       is_expected.to be_valid
@@ -110,14 +96,6 @@ describe EmailAssessor do
       user.email = "foo@abc123.#{blacklisted_domain}"
       is_expected.to be_invalid
     end
-
-    it "should raise when the configured blacklisted domains file does not exist" do
-      described_class.configure do |config|
-        config.blacklisted_domains_file_name = "domains.txt"
-      end
-
-      expect { user.valid? }.to raise_error Errno::ENOENT
-    end
   end
 
   describe "mx lookup" do
@@ -130,36 +108,6 @@ describe EmailAssessor do
     it "should be invalid if no mx records are found" do
       user.email = "foo@subdomain.gmail.com"
       is_expected.to be_invalid
-    end
-  end
-
-  describe "configuration" do
-    subject(:configuration) { described_class.configuration }
-    let(:disposable_domains_file_name) { File.expand_path("../fixtures/disposable_domains.txt", __FILE__) }
-
-    before do
-      described_class.configure do |config|
-        config.disposable_domains_file_name = disposable_domains_file_name
-        config.blacklisted_domains_file_name = blacklisted_domains_file_name
-      end
-    end
-
-    it "sets the disposable domains file" do
-      is_expected.to have_attributes disposable_domains_file_name: disposable_domains_file_name
-    end
-
-    it "sets the blacklisted domains file" do
-      is_expected.to have_attributes blacklisted_domains_file_name: blacklisted_domains_file_name
-    end
-
-    it "uses the configured disposable domains file" do
-      disposable_user.email = disposable_domain
-      expect(disposable_user).to be_invalid
-    end
-
-    it "uses the configured blacklisted domains file" do
-      blacklist_user.email = blacklisted_domain
-      expect(blacklist_user).to be_invalid
     end
   end
 end

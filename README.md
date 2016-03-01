@@ -36,6 +36,30 @@ Or install it yourself as:
 
     $ gem install email_assessor
 
+## Domain List Files
+
+Domain list files, used for blacklisting and blocking disposable emails, are plain-text files with one **lower case** domain per line.
+
+Valid domain list file:
+```
+example.com
+subdomain.example.org
+```
+
+Invalid domain list file:
+```
+http://example.com
+example.com/mail
+```
+
+Be careful with subdomains. Given the following domain list file:
+
+```
+sub.example.com
+```
+
+A user would be able to register with the email `jake@example.com` but not `tom@sub.example.com` or `jerry@deep.sub.example.com`.
+
 ## Usage
 
 ### Use with ActiveModel
@@ -57,14 +81,14 @@ To validate that the domain is not a disposable email:
 validates :email, email: { disposable: true }
 ```
 
-To validate that the domain is not blacklisted (under vendor/blacklisted_domains.txt):
+To validate that the domain is not blacklisted (via `vendor/blacklisted_domains.txt`):
 ```ruby
 validates :email, email: { blacklist: true }
 ```
 
 All together:
 ```ruby
-validates :email, email: { mx: true, disposable: true }
+validates :email, email: { mx: true, disposable: true, blacklist: true }
 ```
 
 > Note that this gem will let an empty email pass through so you will need to
