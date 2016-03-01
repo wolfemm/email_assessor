@@ -120,18 +120,18 @@ describe EmailAssessor do
     end
   end
 
-  # describe "mx lookup" do
-  #   subject(:user) { mx_user }
+  describe "mx lookup" do
+    subject(:user) { mx_user }
 
-  #   it "should be valid if mx records are found" do
-  #     is_expected.to be_valid
-  #   end
+    it "should be valid if mx records are found" do
+      is_expected.to be_valid
+    end
 
-  #   it "should be invalid if no mx records are found" do
-  #     user.email = "foo@subdomain.gmail.com"
-  #     is_expected.to be_invalid
-  #   end
-  # end
+    it "should be invalid if no mx records are found" do
+      user.email = "foo@subdomain.gmail.com"
+      is_expected.to be_invalid
+    end
+  end
 
   describe "configuration" do
     subject(:configuration) { described_class.configuration }
