@@ -29,7 +29,7 @@ module EmailAssessor
   protected
 
   def self.domain_in_file?(domain, file_name)
-    return false unless file_name.present? && File.exists?(file_name)
+    file_name ||= ""
 
     domain = domain.downcase
     domain_matched = false
