@@ -32,17 +32,8 @@ module EmailAssessor
 
   def self.domain_in_file?(domain, file_name)
     file_name ||= ""
-
     domain = domain.downcase
-    domain_matched = false
 
-    File.open(file_name).each do |line|
-      if domain.end_with?(line.chomp)
-        domain_matched = true
-        break
-      end
-    end
-
-    domain_matched
+    File.open(file_name).each_line.any? { |line| domain.end_with?(line) }
   end
 end
