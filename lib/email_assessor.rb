@@ -22,7 +22,9 @@ module EmailAssessor
 
     def initialize
       @disposable_domains_file_name = File.expand_path("../../vendor/disposable_domains.txt", __FILE__)
-      @blacklisted_domains_file_name = File.expand_path("vendor/blacklisted_domains.txt")
+
+      # no default blacklisted_domains_file_name
+      @blacklisted_domains_file_name = ""
     end
   end
 
