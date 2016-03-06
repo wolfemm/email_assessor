@@ -18,6 +18,6 @@ module EmailAssessor
     file_name ||= ""
     domain = domain.downcase
 
-    File.open(file_name).each_line.any? { |line| domain.end_with?(line) }
+    File.open(file_name).each_line.any? { |line| domain.end_with?(line.chomp) }
   end
 end
