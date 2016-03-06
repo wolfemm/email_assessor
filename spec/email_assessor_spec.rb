@@ -23,10 +23,10 @@ describe EmailAssessor do
   let(:mx_user) { TestUserMX.new(email: "foo@gmail.com") }
 
   let(:blacklisted_domains_file_name) { described_class::BLACKLISTED_DOMAINS_FILE_NAME }
-  let(:blacklisted_domain) { File.open(blacklisted_domains_file_name, &:readline) }
+  let(:blacklisted_domain) { File.open(blacklisted_domains_file_name, &:readline).chomp }
 
   let(:disposable_domains_file_name) { described_class::DISPOSABLE_DOMAINS_FILE_NAME }
-  let(:disposable_domain) { File.open(disposable_domains_file_name, &:readline) }
+  let(:disposable_domain) { File.open(disposable_domains_file_name, &:readline).chomp }
 
   describe "basic validation" do
     subject(:user) { plain_user }
