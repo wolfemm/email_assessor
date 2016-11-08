@@ -1655,6 +1655,8 @@ spoofmail.de
 spritzzone.de
 spybox.de
 squizzy.de
+squizzy.eu
+squizzy.net
 sr.ro.lt
 sry.li
 ss.undo.it
