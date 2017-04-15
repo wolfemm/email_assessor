@@ -74,6 +74,11 @@ describe EmailAssessor do
       is_expected.to be_invalid
     end
 
+    it "should be invalid when email is in the list of disposable domains regardless of case" do
+      user.email = "foo@#{disposable_domain.upcase}"
+      is_expected.to be_invalid
+    end
+
     it "should be invalid when email is in the list of disposable domains regardless of subdomain" do
       user.email = "foo@abc123.#{disposable_domain}"
       is_expected.to be_invalid
@@ -89,6 +94,11 @@ describe EmailAssessor do
 
     it "should be invalid when email domain is in the blacklist" do
       user.email = "foo@#{blacklisted_domain}"
+      is_expected.to be_invalid
+    end
+
+    it "should be invalid when email is in the blacklist regardless of case" do
+      user.email = "foo@#{blacklisted_domain.upcase}"
       is_expected.to be_invalid
     end
 
