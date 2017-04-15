@@ -48,6 +48,7 @@
 20mail.eu
 20mail.in
 20mail.it
+20minute.email
 20minutemail.com
 2120001.net
 21cn.com
@@ -1087,10 +1088,10 @@ maildrop.ml
 maildu.de
 maildx.com
 maileater.com
-maileme101.com
 mailed.in
 mailed.ro
 maileimer.de
+maileme101.com
 mailexpire.com
 mailfa.tk
 mailforspam.com
@@ -1384,6 +1385,7 @@ pisls.com
 pjjkp.com
 plexolan.de
 plhk.ru
+ploae.com
 plw.me
 po.bot.nu
 poh.pp.ua
@@ -1444,6 +1446,7 @@ randomail.net
 raqid.com
 rax.la
 raxtest.com
+rcasd.com
 rcpt.at
 rcs.gaggle.net
 reallymymail.com
