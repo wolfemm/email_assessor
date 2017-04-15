@@ -22,8 +22,9 @@ module EmailAssessor
 
       if address.domain && address.address == @raw_address
         domain = address.domain
-        # Valid address needs to have a dot in the domain
-        !!domain.match(/\./) && !domain.match(/\.{2,}/) && domain.match(/[a-z]\Z/i)
+        # Valid address needs to have a dot in the domain but can't start with a dot
+        !!domain.match(/\./) && !domain.match(/\.{2,}/) && domain.match(/[a-z]\Z/i) &&
+          !domain.match(/^\./)
       else
         false
       end

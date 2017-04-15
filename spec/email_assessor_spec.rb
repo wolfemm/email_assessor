@@ -36,7 +36,7 @@ describe EmailAssessor do
     end
 
     it "should not be valid when domain is missing" do
-      user.email = "foo"
+      user.email = "foo@.com"
       is_expected.to be_invalid
     end
 
