@@ -5,7 +5,7 @@ require "yaml"
 require "json"
 require "net/http"
 
-whitelisted_domains = %w(poczta.onet.pl fastmail.fm hushmail.com naver.com qq.com)
+whitelisted_domains = %w(poczta.onet.pl fastmail.fm hushmail.com naver.com qq.com nus.edu.sg)
 
 existing_domains = File.readlines("vendor/disposable_domains.txt")
 
