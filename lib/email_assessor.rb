@@ -18,6 +18,6 @@ module EmailAssessor
     file_name ||= ""
     domain = domain.downcase
 
-    File.foreach(file_name).any? { |line| domain.end_with?(line.chomp) }
+    File.foreach(file_name).any? { |line| domain.match?(%r{\A(?:.+\.)*?#{line.chomp}\z}i) }
   end
 end
