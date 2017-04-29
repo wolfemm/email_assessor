@@ -18,7 +18,7 @@ module EmailAssessor
     file_name ||= ""
     domain = domain.downcase
 
-    # Using String#end_with? here would lead to unexpected quirks and false psositives.
+    # Using String#end_with? here would lead to unexpected quirks and false positives.
     # For instance, hotmail.com is valid but tmail.com is not.
     File.foreach(file_name).any? { |line| domain.match?(%r{\A(?:.+\.)*?#{line.chomp}\z}i) }
   end
