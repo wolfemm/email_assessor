@@ -156,15 +156,6 @@ amail.club
 amail.com
 ama-trade.de
 ama-trans.de
-<<<<<<< HEAD
-||||||| parent of 2d25508... Update more disposable email domains
-amail.com
-amail4.me
-=======
-amail.com
-amail.club
-amail4.me
->>>>>>> 2d25508... Update more disposable email domains
 amazon-aws.org
 amelabs.com
 amilegit.com
@@ -307,7 +298,6 @@ c2.hu
 c51vsgq.com
 cachedot.net
 californiafitnessdeals.com
-cars2.club
 cam4you.cc
 card.zp.ua
 cars2.club
@@ -343,7 +333,6 @@ clixser.com
 clrmail.com
 cmail.club
 cmail.com
-cmail.club
 cmail.net
 cmail.org
 cnamed.com
@@ -737,14 +726,9 @@ getairmail.ga
 getairmail.gq
 getairmail.ml
 getairmail.tk
-<<<<<<< HEAD
 get-mail.cf
 get-mail.ga
 get-mail.ml
-||||||| parent of 2d25508... Update more disposable email domains
-=======
-getnada.com
->>>>>>> 2d25508... Update more disposable email domains
 getmails.eu
 get-mail.tk
 getnada.com
@@ -1285,14 +1269,8 @@ mywarnernet.net
 myzx.com
 n1nja.org
 nabuma.com
-<<<<<<< HEAD
 nada.email
 nada.ltd
-||||||| parent of 2d25508... Update more disposable email domains
-=======
-nada.ltd
-nada.email
->>>>>>> 2d25508... Update more disposable email domains
 nakedtruth.biz
 nanonym.ch
 nationalgardeningclub.com
