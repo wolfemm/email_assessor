@@ -155,6 +155,7 @@ alph.wtf
 ama-trade.de
 ama-trans.de
 amail.com
+amail.club
 amail4.me
 amazon-aws.org
 amelabs.com
@@ -215,6 +216,8 @@ azmeil.tk
 b2cmail.de
 badgerland.eu
 badoop.com
+banit.club
+banit.me
 basscode.org
 bauwerke-online.com
 baxomale.ht.cx
@@ -295,6 +298,7 @@ c2.hu
 c51vsgq.com
 cachedot.net
 californiafitnessdeals.com
+cars2.club
 cam4you.cc
 card.zp.ua
 cartelera.org
@@ -328,6 +332,7 @@ clipmail.eu
 clixser.com
 clrmail.com
 cmail.com
+cmail.club
 cmail.net
 cmail.org
 cnamed.com
@@ -474,6 +479,7 @@ dropmail.me
 dsiay.com
 dspwebservices.com
 duam.net
+duck2.club
 dudmail.com
 dukedish.com
 dump-email.info
@@ -726,6 +732,7 @@ getairmail.ga
 getairmail.gq
 getairmail.ml
 getairmail.tk
+getnada.com
 getmails.eu
 getonemail.com
 getonemail.net
@@ -1262,6 +1269,8 @@ mywarnernet.net
 myzx.com
 n1nja.org
 nabuma.com
+nada.ltd
+nada.email
 nakedtruth.biz
 nanonym.ch
 national.shitposting.agency
@@ -2002,6 +2011,7 @@ willselfdestruct.com
 wimsg.com
 winemaven.info
 wmail.cf
+wmail.club
 wolfsmail.tk
 wollan.info
 wovz.cu.cc
