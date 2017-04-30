@@ -25,7 +25,7 @@ module EmailAssessor
 
         domain.match?(%r{\.}) && # Valid address domain must contain a period
           !domain.match?(%r{\.{2,}}) && # Valid address domain cannot have consecutive periods
-          !domain.match?(%r{^\.}) && # Valid address domain cannot start with a period
+          !domain.match?(%r{\A\.}) && # Valid address domain cannot start with a period
           domain.match?(%r{[a-z]\Z}i) # Valid address domain must end with letters
       else
         false
