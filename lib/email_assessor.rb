@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "email_assessor/email_validator"
 
 module EmailAssessor

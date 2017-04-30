@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "email_assessor"
 require "resolv"
 require "mail"

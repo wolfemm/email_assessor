@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "email_assessor/address"
 require "active_model"
 require "active_model/validations"
