@@ -13,8 +13,6 @@ module EmailAssessor
     domain_in_file?(domain, BLACKLISTED_DOMAINS_FILE_NAME)
   end
 
-  protected
-
   def self.domain_in_file?(domain, file_name)
     file_name ||= ""
     domain = domain.downcase

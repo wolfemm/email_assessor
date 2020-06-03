@@ -42,15 +42,24 @@ module EmailAssessor
     end
 
     def valid_mx?
-      return false unless valid?
+      valid? && mx_servers.any?
+    end
 
-      mx = []
+    def mx_server_is_in?(domain_list_file)
+      mx_servers.any? do |mx_server|
+        return false unless mx_server.respond_to?(:exchange)
+        mx_server = mx_server.exchange.to_s
 
-      Resolv::DNS.open do |dns|
-        mx.concat dns.getresources(address.domain, Resolv::DNS::Resource::IN::MX)
+        EmailAssessor.domain_in_file?(mx_server, domain_list_file)
       end
+    end
 
-      mx.any?
+    def mx_servers
+      @mx_servers ||= Resolv::DNS.open do |dns|
+        mx_servers = dns.getresources(address.domain, Resolv::DNS::Resource::IN::MX)
+        (mx_servers.any? && mx_servers) ||
+          dns.getresources(address.domain, Resolv::DNS::Resource::IN::A)
+      end
     end
   end
 end
