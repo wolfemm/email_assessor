@@ -24,12 +24,12 @@ module EmailAssessor
       if address.domain && address.address == @raw_address
         domain = address.domain
 
-        !domain.start_with?("-") && # Domain may not start with a dash
-        !domain.include?("-.") && # Domain name may not end with a dash
-        domain.include?(".") && # Valid address domain must contain a period
-        !domain.match?(%r{\.{2,}}) && # Valid address domain cannot have consecutive periods
-        !domain.match?(%r{\A\.}) && # Valid address domain cannot start with a period
-        domain.match?(%r{[a-z]\z}i) # Valid address domain must end with letters
+        !domain.start_with?("-") && # Domain may not start with a hyphen
+        !domain.include?("-.") && # Domain name may not end with a hyphen
+        domain.include?(".") && # Domain must contain a period
+        !domain.match?(%r{\.{2,}}) && # Domain may not contain consecutive periods
+        !domain.match?(%r{\A\.}) && # Domain may not start with a period
+        domain.match?(%r{[a-z]\z}i) # Domain must end with letters
       else
         false
       end
