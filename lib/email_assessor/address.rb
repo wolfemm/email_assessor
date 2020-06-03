@@ -7,6 +7,8 @@ module EmailAssessor
   class Address
     attr_accessor :address
 
+    PROHIBITED_DOMAIN_CHARACTERS_REGEX = %r{[+!_\/\s']}
+
     def initialize(address)
       @parse_error = false
       @raw_address = address
@@ -24,6 +26,7 @@ module EmailAssessor
       if address.domain && address.address == @raw_address
         domain = address.domain
 
+        !domain.match?(PROHIBITED_DOMAIN_CHARACTERS_REGEX) &&
         !domain.start_with?("-") && # Domain may not start with a hyphen
         !domain.include?("-.") && # Domain name may not end with a hyphen
         domain.include?(".") && # Domain must contain a period

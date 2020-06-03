@@ -61,6 +61,23 @@ describe EmailAssessor do
       user.email = "foo@bar..com"
       is_expected.to be_invalid
     end
+
+    it "is invalid if the domain contains emoticons" do
+      user.email = "foo🙈@gmail.com"
+      is_expected.to be_invalid
+    end
+
+    it "is invalid if the domain contains spaces" do
+      user.email = "user@gmail .com"
+      is_expected.to be_invalid
+    end
+
+    %w[+ _ ! / \  '].each do |invalid_character|
+      it "is invalid if domain contains a \"#{invalid_character}\" character" do
+        user.email = "foo@google#{invalid_character}yahoo.com"
+        is_expected.to be_invalid
+      end
+    end
   end
 
   describe "disposable domains" do
