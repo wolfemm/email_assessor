@@ -85,6 +85,11 @@ describe EmailAssessor do
       is_expected.to be_invalid
     end
 
+    it "is invalid if the domain contains '.@'" do
+      user.email = "foo.@gmail.com"
+      expect(user.valid?).to be_falsy
+    end
+
     it "is invalid if the domain begins with a hyphen" do
       user = TestUser.new(email: "foo@-gmail.com")
       expect(user.valid?).to be_falsy

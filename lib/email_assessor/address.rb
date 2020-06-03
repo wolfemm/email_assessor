@@ -27,8 +27,9 @@ module EmailAssessor
         !domain.start_with?("-") && # Domain may not start with a hyphen
         !domain.include?("-.") && # Domain name may not end with a hyphen
         domain.include?(".") && # Domain must contain a period
-        !domain.match?(%r{\.{2,}}) && # Domain may not contain consecutive periods
-        !domain.match?(%r{\A\.}) && # Domain may not start with a period
+        !domain.include?("..") && # Domain may not contain consecutive periods
+        !address.address.include?(".@") && # Address may not contain a dot directly before @
+        !domain.start_with?(".") && # Domain may not start with a period
         domain.match?(%r{[a-z]\z}i) # Domain must end with letters
       else
         false
