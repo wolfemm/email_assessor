@@ -84,6 +84,16 @@ describe EmailAssessor do
       user.email = "foo@abc123.#{disposable_domain}"
       is_expected.to be_invalid
     end
+
+    it "is invalid if the domain begins with a hyphen" do
+      user = TestUser.new(email: "foo@-gmail.com")
+      expect(user.valid?).to be_falsy
+    end
+
+    it "is invalid if the domain name ends with a hyphen" do
+      user = TestUser.new(email: "foo@gmail-.com")
+      expect(user.valid?).to be_falsy
+    end
   end
 
   describe "blacklisted domains" do
