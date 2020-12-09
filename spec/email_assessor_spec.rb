@@ -36,6 +36,21 @@ describe EmailAssessor do
       is_expected.to be_valid
     end
 
+    it "is invalid if the address starts with a dot" do
+      user = TestUser.new(email: ".foo@bar.com")
+      expect(user.valid?).to be_falsey
+    end
+
+    it "is invalid if the address contains consecutive dots" do
+      user = TestUser.new(email: "foo..bar@gmail.com")
+      expect(user.valid?).to be_falsey
+    end
+
+    it "is invalid if the address ends with a dot" do
+      user = TestUser.new(email: "foo.@bar.com")
+      expect(user.valid?).to be_falsey
+    end
+
     it "is invalid when domain is missing" do
       user.email = "foo@.com"
       is_expected.to be_invalid

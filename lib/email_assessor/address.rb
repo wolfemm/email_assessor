@@ -27,13 +27,14 @@ module EmailAssessor
         domain = address.domain
 
         !domain.match?(PROHIBITED_DOMAIN_CHARACTERS_REGEX) &&
-        !domain.start_with?("-") && # Domain may not start with a hyphen
-        !domain.include?("-.") && # Domain name may not end with a hyphen
-        domain.include?(".") && # Domain must contain a period
-        !domain.include?("..") && # Domain may not contain consecutive periods
-        !address.address.include?(".@") && # Address may not contain a dot directly before @
-        !domain.start_with?(".") && # Domain may not start with a period
-        domain.match?(%r{[a-z]\z}i) # Domain must end with letters
+          domain.include?('.') &&
+          !domain.include?('..') &&
+          !domain.start_with?('.') &&
+          !domain.start_with?('-') &&
+          !domain.include?('-.') &&
+          !address.local.include?('..') &&
+          !address.local.end_with?('.') &&
+          !address.local.start_with?('.')
       else
         false
       end
