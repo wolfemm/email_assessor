@@ -7,7 +7,81 @@ module EmailAssessor
   class Address
     attr_accessor :address
 
-    PROHIBITED_DOMAIN_CHARACTERS_REGEX = %r{[+!_\/\s']}
+    PROHIBITED_DOMAIN_PREFIXES = [
+      '.',
+      '-',
+    ].freeze
+
+    PROHIBITED_DOMAIN_CONTENT = [
+      '+',
+      '!',
+      '_',
+      '/',
+      ' ',
+      '..',
+      '-.',
+      "'",
+    ].freeze
+
+    PROHIBITED_DOMAIN_SUFFIXES = [
+      # none
+    ].freeze
+
+    PROHIBITED_LOCAL_PREFIXES = [
+      '.',
+    ].freeze
+
+    PROHIBITED_LOCAL_CONTENT = [
+      '..',
+    ].freeze
+
+    PROHIBITED_LOCAL_SUFFIXES = [
+      '.',
+    ].freeze
+
+    class << self
+      def prohibited_domain_regex
+        @prohibited_domain_content_regex ||= make_regex(
+          prefixes: PROHIBITED_DOMAIN_PREFIXES,
+          content: PROHIBITED_DOMAIN_CONTENT,
+          suffixes: PROHIBITED_DOMAIN_SUFFIXES
+        )
+      end
+
+      def prohibited_local_regex
+        @prohibited_local_content_regex ||= make_regex(
+          prefixes: PROHIBITED_LOCAL_PREFIXES,
+          content: PROHIBITED_LOCAL_CONTENT,
+          suffixes: PROHIBITED_LOCAL_SUFFIXES
+        )
+      end
+
+      private
+
+      def make_regex(prefixes: nil, content: nil, suffixes: nil)
+        parts = []
+
+        unless prefixes.nil?
+          prefixes.each do |prefix|
+            parts << "\\A#{Regexp.escape(prefix)}"
+          end
+        end
+
+        unless content.nil?
+          content.each do |prefix|
+            parts << Regexp.escape(prefix)
+          end
+        end
+
+        unless suffixes.nil?
+          suffixes.each do |prefix|
+            parts << "#{Regexp.escape(prefix)}\\z"
+          end
+        end
+
+        Regexp.new(parts.join("|"), Regexp::IGNORECASE)
+      end
+    end
 
     def initialize(address)
       @parse_error = false
@@ -28,15 +102,9 @@ module EmailAssessor
         if address.domain && address.address == @raw_address
           domain = address.domain
 
-          !domain.match?(PROHIBITED_DOMAIN_CHARACTERS_REGEX) &&
-            domain.include?('.') &&
-            !domain.include?('..') &&
-            !domain.start_with?('.') &&
-            !domain.start_with?('-') &&
-            !domain.include?('-.') &&
-            !address.local.include?('..') &&
-            !address.local.end_with?('.') &&
-            !address.local.start_with?('.')
+          domain.include?('.') &&
+            !domain.match?(self.class.prohibited_domain_regex) &&
+            !address.local.match?(self.class.prohibited_local_regex)
         else
           false
         end
