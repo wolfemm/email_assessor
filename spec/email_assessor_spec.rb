@@ -41,6 +41,11 @@ describe EmailAssessor do
       is_expected.to be_invalid
     end
 
+    it "is invalid when domain starts with a dot" do
+      user.email = "foo@.example.com"
+      is_expected.to be_invalid
+    end
+
     it "is invalid when email is malformed" do
       user.email = "foo@bar"
       is_expected.to be_invalid
