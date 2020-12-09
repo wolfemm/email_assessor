@@ -21,23 +21,25 @@ module EmailAssessor
     end
 
     def valid?
+      return @valid unless @valid.nil?
       return false if @parse_error
 
-      if address.domain && address.address == @raw_address
-        domain = address.domain
+      @valid =
+        if address.domain && address.address == @raw_address
+          domain = address.domain
 
-        !domain.match?(PROHIBITED_DOMAIN_CHARACTERS_REGEX) &&
-          domain.include?('.') &&
-          !domain.include?('..') &&
-          !domain.start_with?('.') &&
-          !domain.start_with?('-') &&
-          !domain.include?('-.') &&
-          !address.local.include?('..') &&
-          !address.local.end_with?('.') &&
-          !address.local.start_with?('.')
-      else
-        false
-      end
+          !domain.match?(PROHIBITED_DOMAIN_CHARACTERS_REGEX) &&
+            domain.include?('.') &&
+            !domain.include?('..') &&
+            !domain.start_with?('.') &&
+            !domain.start_with?('-') &&
+            !domain.include?('-.') &&
+            !address.local.include?('..') &&
+            !address.local.end_with?('.') &&
+            !address.local.start_with?('.')
+        else
+          false
+        end
     end
 
     def disposable?
