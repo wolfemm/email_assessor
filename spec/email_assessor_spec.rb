@@ -17,10 +17,15 @@ class TestUserDisallowBlacklisted < TestModel
   validates :email, email: { blacklist: true }
 end
 
+class TestUserDisallowEducational < TestModel
+  validates :email, email: { educational: :no_educational }
+end
+
 describe EmailAssessor do
   let(:plain_user) { TestUser.new(email: "") }
   let(:disposable_user) { TestUserDisallowDisposable.new(email: "foo@gmail.com") }
   let(:blacklist_user) { TestUserDisallowBlacklisted.new(email: "foo@gmail.com") }
+  let(:educational_user) { TestUserDisallowEducational.new(email: "foo@gmail.com") }
   let(:mx_user) { TestUserMX.new(email: "foo@gmail.com") }
 
   let(:blacklisted_domains_file_name) { described_class::BLACKLISTED_DOMAINS_FILE_NAME }
@@ -28,6 +33,9 @@ describe EmailAssessor do
 
   let(:disposable_domains_file_name) { described_class::DISPOSABLE_DOMAINS_FILE_NAME }
   let(:disposable_domain) { File.open(disposable_domains_file_name, &:readline).chomp }
+
+  let(:educational_domains_file_name) { described_class::EDUCATIONAL_DOMAINS_FILE_NAME }
+  let(:educational_domain) { File.open(educational_domains_file_name, &:readline).chomp }
 
   describe "basic validation" do
     subject(:user) { plain_user }
@@ -160,6 +168,31 @@ describe EmailAssessor do
       is_expected.to be_invalid
     end
   end
+
+  describe "educational domains" do
+    subject(:user) { educational_user }
+
+    it "is valid when email domain is not in the educational blocklist" do
+      is_expected.to be_valid
+    end
+
+    it "is invalid when email domain is in the educational blocklist" do
+      user.email = "foo@#{educational_domain}"
+      is_expected.to be_invalid
+    end
+
+    it "is invalid when email is in the educational blocklist regardless of case" do
+      user.email = "foo@#{educational_domain.upcase}"
+      is_expected.to be_invalid
+    end
+
+    it "is invalid when email domain is in the educational blocklist regardless of subdomain" do
+      user.email = "foo@abc123.#{educational_domain}"
+      is_expected.to be_invalid
+      expect(user.errors.added?(:email, :no_educational)).to be_truthy
+    end
+  end
+
 
   describe "mx lookup" do
     subject(:user) { mx_user }

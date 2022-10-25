@@ -111,11 +111,23 @@ module EmailAssessor
     end
 
     def disposable?
-      valid? && EmailAssessor.domain_is_disposable?(address.domain)
+      domain_in_file?(EmailAssessor::DISPOSABLE_DOMAINS_FILE_NAME)
     end
 
     def blacklisted?
-      valid? && EmailAssessor.domain_is_blacklisted?(address.domain)
+      domain_in_file?(EmailAssessor::BLACKLISTED_DOMAINS_FILE_NAME)
+    end
+
+    def educational?
+      domain_in_file?(EmailAssessor::EDUCATIONAL_DOMAINS_FILE_NAME)
+    end
+
+    def fastpass?
+      domain_in_file?(EmailAssessor::FASTPASS_DOMAINS_FILE_NAME)
+    end
+
+    def domain_in_file?(filename)
+      valid? && EmailAssessor.domain_in_file?(address.domain, filename)
     end
 
     def valid_mx?

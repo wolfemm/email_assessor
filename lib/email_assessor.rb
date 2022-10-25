@@ -3,6 +3,8 @@ require "email_assessor/email_validator"
 
 module EmailAssessor
   DISPOSABLE_DOMAINS_FILE_NAME = File.expand_path("../../vendor/disposable_domains.txt", __FILE__)
+  FASTPASS_DOMAINS_FILE_NAME = File.expand_path("../../vendor/fastpass_domains.txt", __FILE__)
+  EDUCATIONAL_DOMAINS_FILE_NAME = File.expand_path("../../vendor/educational_domains.txt", __FILE__)
   BLACKLISTED_DOMAINS_FILE_NAME = File.expand_path("vendor/blacklisted_domains.txt")
 
   def self.domain_is_disposable?(domain)
