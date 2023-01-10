@@ -501,6 +501,7 @@ dlh.dk
 dlshs.org
 dmes.ae
 dnu.dp.ua
+doe.as
 dongau.ru
 dongemondcollege.nl
 donmeduni.com
@@ -1034,6 +1035,7 @@ gollisuniversity.com
 gopalma.org
 gorganiau.ir
 gorny-ins.ru
+gotvdsb.ca
 government.ind.in
 gpisdstu.org
 gpma.ru
@@ -1066,6 +1068,7 @@ gurukuluniversity.org
 gusd.org
 guu.ru
 gwsh.pl
+gymnasium-teltow.de
 h-brs.de
 h-da.de
 h122.org
@@ -1576,6 +1579,7 @@ lcsedu.net
 lcst.ac
 ldceahd.org
 ldcsb.org
+ldisd.net
 leanderisd.org
 leeschools.net
 lef.upn.mx
@@ -1867,6 +1871,7 @@ nu-online.com
 nugaaluniversity.com
 nui.ie
 nuigalway.ie
+nukuspm.uz
 nul.ls
 nulaoag.com
 nure.ua
@@ -1920,6 +1925,7 @@ pac.by
 paderborn.de
 padmavatiwomen-univ.org
 pakistanhomoeopathy.com
+pakurduschool.com
 palmbeachschools.org
 pam.szczecin.pl
 panasia.org.sg
@@ -2086,6 +2092,7 @@ rowlandschools.org
 royalroads.ca
 rpiva.lv
 rpsk12.org
+rsgc.on.ca
 rshu.ru
 rsm.nl
 rsmu.da.ru
@@ -2111,6 +2118,7 @@ saadcollege.com
 sabauni.net
 sabi.eu.com
 sacrocuore.org
+saedubai.com
 sagaruniversity.nic.in
 saicloudschool.net.in
 sait.ca
@@ -2205,6 +2213,7 @@ sjsm.org
 sjsv.nic.in
 sjusd.org
 ska.khio.no
+skola.flen.se
 skuniv.ap.nic.in
 skylineuniversity.com
 slam.katowice.pl
