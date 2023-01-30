@@ -98,6 +98,7 @@ alhosnu.ae
 alldunivpio.org
 almaarifah.com
 almamonuc.org
+alphaskolan.se
 alrasheed-uc.com
 alsadrain.org
 altmeduniversity.com
@@ -271,6 +272,7 @@ bi.no
 bifrost.is
 bigpi.biysk.ru
 bihe.org
+birdvilleschools.net
 bisla.sk
 bitmesraranchi.org
 bits-iserlohn.de
@@ -555,6 +557,7 @@ ecoles-idrac.com
 ecsd.me
 ecsd.net
 ecsrd.ca
+ed.cr
 edu
 edu.af
 edu.al
@@ -828,6 +831,7 @@ essec.fr
 esstin.u-nancy.fr
 esstu.ru
 estacio.br
+estetiskaskolan.se
 estp.fr
 esuhsd.org
 ethz.ch
@@ -982,6 +986,7 @@ finki.ukim.mk
 firstnationsuniversity.ca
 fit.cvut.cz
 fityangowa.sch.id
+fmcsd.ab.ca
 fom-net.de
 fom.de
 fomicgroup.cm
@@ -1402,6 +1407,7 @@ jhubc.it
 jku.at
 jmi.nic.in
 jnkvv.nic.in
+jnpsd.org
 jodhpurnationaluniversity.com
 joensuu.fi
 jonesboroschools.net
@@ -2078,6 +2084,7 @@ rgata.yaroslavl.ru
 rgtu.net
 rialtousd.org
 ridgefieldschools.com
+rimschools.org
 rinnell-k12.org
 risd.org
 riversideunified.org
@@ -2155,6 +2162,7 @@ school.nz
 sciences-po.fr
 sciencespo-rennes.fr
 sciencespo.fr
+scioskola.cz
 sclondon.ac
 scp.fi
 sctimst.ker.nic.in
@@ -2201,6 +2209,7 @@ shu.smolensk.su
 siba.fi
 sibiu.ro
 sibsiu.kemerovo.su
+sics-mail.net
 siewerth-akademie.de
 sigu7.jussieu.fr
 singaporeschoolmanila.com.ph
@@ -2213,7 +2222,14 @@ sjsm.org
 sjsv.nic.in
 sjusd.org
 ska.khio.no
+skola.botkyrka.se
+skola.falun.se
 skola.flen.se
+skola.goteborg.se
+skola.malmo.se
+skola.raseborg.fi
+skola.uppsala.se
+skolakalmar.se
 skuniv.ap.nic.in
 skylineuniversity.com
 slam.katowice.pl
@@ -3470,6 +3486,7 @@ valahia.ro
 vaniercollege.qc.ca
 vansd.org
 vbu.co.in
+vbu.se
 vcc.ca
 vdu.lt
 veda-edu.com
