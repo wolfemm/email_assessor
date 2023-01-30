@@ -127,7 +127,7 @@ module EmailAssessor
     end
 
     def domain_in_file?(filename)
-      valid? && EmailAssessor.domain_in_file?(address.domain, filename)
+      valid? && EmailAssessor.any_token_in_file?(domain_tokens, filename)
     end
 
     def valid_mx?
@@ -149,6 +149,12 @@ module EmailAssessor
         (mx_servers.any? && mx_servers) ||
           dns.getresources(address.domain, Resolv::DNS::Resource::IN::A)
       end
+    end
+
+    private
+
+    def domain_tokens
+      @domain_tokens ||= EmailAssessor.tokenize_domain(address.domain.downcase)
     end
   end
 end

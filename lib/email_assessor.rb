@@ -16,13 +16,29 @@ module EmailAssessor
   end
 
   def self.domain_in_file?(domain, file_name)
+    any_token_in_file?(tokenize_domain(domain.downcase), file_name)
+  end
+
+  def self.any_token_in_file?(domain_tokens, file_name)
     file_name ||= ""
-    domain = domain.downcase
 
     File.foreach(file_name, chomp: true).any? do |line|
-      # String#end_with? is used as a cheaper initial check but due to potential false positives
-      # (hotmail.com is valid but tmail.com is not) regex is also necessary.
-      domain.end_with?(line) && domain.match?(%r{\A(?:.*\.)?#{Regexp.escape(line)}\z}i)
+      domain_tokens.key?(line)
     end
+  end
+
+  def self.tokenize_domain(domain)
+    parts = domain.split(".")
+    tokens = {}
+
+    loop do
+      tokens[parts.join(".")] = nil
+
+      parts.shift
+
+      break if parts.empty?
+    end
+
+    tokens
   end
 end
