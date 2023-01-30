@@ -5,7 +5,7 @@ require "mail"
 
 module EmailAssessor
   class Address
-    attr_accessor :address
+    attr_accessor :parsed
 
     PROHIBITED_DOMAIN_PREFIXES = [
       '.',
@@ -83,12 +83,16 @@ module EmailAssessor
       end
     end
 
-    def initialize(address)
+    def initialize(raw_address)
       @parse_error = false
-      @raw_address = address
+      @raw_address = raw_address
+      @address = nil
+      @valid = nil
+      @mx_servers = nil
+      @domain_tokens = nil
 
       begin
-        @address = Mail::Address.new(address)
+        @address = Mail::Address.new(raw_address)
       rescue Mail::Field::ParseError
         @parse_error = true
       end
