@@ -31,12 +31,9 @@ module EmailAssessor
     parts = domain.split(".")
     tokens = {}
 
-    loop do
+    parts.length.times do
       tokens[parts.join(".")] = nil
-
       parts.shift
-
-      break if parts.empty?
     end
 
     tokens
