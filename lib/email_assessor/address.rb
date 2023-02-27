@@ -158,7 +158,7 @@ module EmailAssessor
     private
 
     def domain_tokens
-      @domain_tokens ||= EmailAssessor.tokenize_domain(address.domain.downcase)
+      @domain_tokens ||= EmailAssessor.tokenize_domain(address.domain)
     end
   end
 end

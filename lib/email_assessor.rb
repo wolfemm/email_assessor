@@ -16,7 +16,7 @@ module EmailAssessor
   end
 
   def self.domain_in_file?(domain, file_name)
-    any_token_in_file?(tokenize_domain(domain.downcase), file_name)
+    any_token_in_file?(tokenize_domain(domain), file_name)
   end
 
   def self.any_token_in_file?(domain_tokens, file_name)
@@ -28,7 +28,7 @@ module EmailAssessor
   end
 
   def self.tokenize_domain(domain)
-    parts = domain.split(".")
+    parts = domain.downcase.split(".")
     tokens = {}
 
     parts.length.times do
