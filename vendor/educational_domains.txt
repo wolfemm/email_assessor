@@ -354,6 +354,7 @@ cbs.dk
 cbu2000.com
 ccbc.ca
 ccsd89.me
+ccsk12.com
 ccsk12.net
 ccsuniversity.org
 cdsbk12.ca
@@ -428,6 +429,7 @@ csdnbstudents.org
 csk12.net
 csmrouen.com
 csmrouen.net
+cspi.qc.ca
 cssk12.net
 cubidor.com
 cueyatl.uam.mx
@@ -474,6 +476,7 @@ dcu.ie
 ddea.dk
 ddu.nl
 dehaagsehogeschool.nl
+dekalbschoolsga.org
 delvalle-isd.org
 deped.gov.ph
 deusto.es
@@ -495,6 +498,7 @@ dias.ie
 dibru.ernet.in
 diploma.de
 disfm.rnu.tn
+dist159.com
 district196.org
 dit.ie
 diu.net.bd
@@ -698,6 +702,7 @@ efh-reutlingen-ludwigsburg.de
 efhlu.de
 efpg.inpg.fr
 efrei.fr
+egressy.info
 egusd.net
 eh-darmstadt.de
 ehb.be
@@ -1079,6 +1084,7 @@ h-da.de
 h122.org
 ha.be
 halifaxuni.ac
+halmstad.se
 hamk.fi
 hancockstudents.com
 hanseuni.de
@@ -1512,6 +1518,7 @@ kma.mk.ua
 knastu.ru
 knau.kg
 kneu.kiev.ua
+knightpride.org
 knightsbridgeuniversity.com
 knoxschools.org
 kodolanyi.hu
@@ -1656,6 +1663,7 @@ mahendradatta.org
 mail.polimi.it
 mails-24.net
 mala.bc.ca
+maldenps.org
 man.radom.pl
 manas.kg
 mandhu.com
@@ -2359,6 +2367,7 @@ swissu.org
 swsm.cn
 swtjc.net
 swu.bg
+syddjursskoler.dk
 synergy.ru
 synergy.university
 sze.hu
@@ -3521,6 +3530,8 @@ vmchs.com
 vnmu.vn.ua
 voenmeh.ru
 volsu.ru
+vorskoler.com
+vorskoler.net
 vpu.lt
 vsau.ru
 vsavm.com
