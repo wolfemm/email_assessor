@@ -103,12 +103,12 @@ module EmailAssessor
       return false if @parse_error
 
       @valid =
-        if address.domain && address.address == @raw_address
-          domain = address.domain
+        if @address.domain && @address.address == @raw_address
+          domain = @address.domain
 
           domain.include?('.') &&
             !domain.match?(self.class.prohibited_domain_regex) &&
-            !address.local.match?(self.class.prohibited_local_regex)
+            !@address.local.match?(self.class.prohibited_local_regex)
         else
           false
         end
@@ -149,16 +149,16 @@ module EmailAssessor
 
     def mx_servers
       @mx_servers ||= Resolv::DNS.open do |dns|
-        mx_servers = dns.getresources(address.domain, Resolv::DNS::Resource::IN::MX)
+        mx_servers = dns.getresources(@address.domain, Resolv::DNS::Resource::IN::MX)
         (mx_servers.any? && mx_servers) ||
-          dns.getresources(address.domain, Resolv::DNS::Resource::IN::A)
+          dns.getresources(@address.domain, Resolv::DNS::Resource::IN::A)
       end
     end
 
     private
 
     def domain_tokens
-      @domain_tokens ||= EmailAssessor.tokenize_domain(address.domain)
+      @domain_tokens ||= EmailAssessor.tokenize_domain(@address.domain)
     end
   end
 end
