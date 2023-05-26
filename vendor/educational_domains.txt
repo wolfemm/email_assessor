@@ -105,6 +105,7 @@ alsadrain.org
 altmeduniversity.com
 altmedworld.net
 alumnos.ui1.es
+alvinisd.net
 alvordschools.net
 alwahaschool.org
 am.katowice.pl
@@ -231,6 +232,7 @@ ba-bautzen.de
 ba.lv
 baa.by
 bakerschools.org
+balbharati.org
 baliis.net
 bambey.univ.sn
 bamendauniversity.com
@@ -303,6 +305,7 @@ brauagra.com
 brazcubas.br
 breckschool.org
 brexgata.eu
+bridgeportedu.net
 brijnet.org
 brocku.ca
 broyalu.net
@@ -342,6 +345,7 @@ campusleon.ugto.mx
 candidomendes.br
 cantonschools.org
 capcollege.bc.ca
+capitalcityacademy.org
 cariboo.bc.ca
 carleton.ca
 carmenhighschool.org
@@ -488,7 +492,9 @@ dehaagsehogeschool.nl
 dekalbschoolsga.org
 delvalle-isd.org
 deped.gov.ph
+depedlaspinas.ph
 depedmakati.ph
+depedmalaboncity.ph
 deusto.es
 devinci.fr
 devry.ca
@@ -511,6 +517,7 @@ disfm.rnu.tn
 dist159.com
 district100.com
 district196.org
+district279.org
 dit.ie
 diu.net.bd
 dkdm.dk
@@ -1496,6 +1503,7 @@ karuniversity.com
 kashmiruniversity.net
 kasuportal.net
 kath-fh-nord.de
+katyisd.org
 kau.kz
 kau.se
 kavanagh.school.nz
@@ -1599,6 +1607,7 @@ lagh-univ.dz
 lakeheadu.ca
 lakeland.cc.il.us
 lakewoodcityschools.org
+lakewoodpiners.org
 lama.lv
 lambtoncollege.ca
 lamk.fi
@@ -1606,6 +1615,7 @@ lampton.org.uk
 langara.bc.ca
 langara.ca
 lansbridge.com
+lasalleinstitucion.es
 lasalleuniversities.net
 laspotech.net
 lasunigeria.org
@@ -1678,6 +1688,7 @@ luth.se
 luz.ve
 lva.lt
 lvjusd.org
+lycee-faure.fr
 lzua.lt
 ma.odessa.ua
 maakhiruniversity.net
@@ -1699,6 +1710,7 @@ manas.kg
 mandhu.com
 manipur.nic.in
 mannheim.dhbw.de
+mansuetohighschool.org
 margu.mari.ru
 marstu.mari.ru
 masu.ru
@@ -1859,6 +1871,7 @@ newworld.ac
 ngasu.sci-nnov.ru
 ngha.med.sa
 nha-bg.org
+nhascholar.com
 nhh.no
 nhtv.nl
 nhv.se
@@ -2019,6 +2032,7 @@ picollege.ca
 pinkertonacademy.org
 pio.urbe.it
 pittschools.org
+pixiil.com
 pma.ph
 pnumanila.com.ph
 pnzgu.ru
@@ -2131,6 +2145,7 @@ ridgefieldschools.com
 rimschools.org
 rinnell-k12.org
 risd.org
+riverhead.net
 riversideunified.org
 riviera.fr
 rmc.ca
@@ -2211,6 +2226,7 @@ scioskola.cz
 sclondon.ac
 scp.fi
 sctimst.ker.nic.in
+scuolemanzoni.it
 scusd.net
 sd.vvsd.org
 sd27j.net
@@ -2229,6 +2245,7 @@ seua.am
 sevntu.com.ua
 sevs.sk
 sfa.ba
+sfdr-cisd.org
 sfsnagpur.in
 sfu.ca
 sfusd.edu
@@ -2445,6 +2462,7 @@ teipir.gr
 teiser.gr
 teithe.gr
 teiwest.gr
+tela.org.uk
 teluq.uquebec.ca
 teologi.dk
 termnet.co.jp
@@ -3563,6 +3581,7 @@ vieup.ru
 vignanuniversity.org
 vikramuniversity.org
 vinayakamissions.com
+vineland.org
 vkgu.kz
 vksu-ara.org
 vlekho.be
