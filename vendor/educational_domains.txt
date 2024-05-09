@@ -57,6 +57,7 @@ acighana.org
 ackonline.com
 acs350.org
 adams12.org
+aden-univ.net
 aderak12.org
 adfa.oz.au
 adygnet.ru
@@ -66,6 +67,7 @@ ae.poznan.pl
 ae.wroc.pl
 aea.asso.fr
 aecarcavelos.com
+aecb.pt
 aegean.gr
 ael.ru
 afi-ue.sn
@@ -120,6 +122,7 @@ amg.gda.pl
 amgd.eu
 aml.lv
 amouduniversity.org
+amsporps.org
 amti.hit.bg
 amtuni.com
 amursu.ru
@@ -312,11 +315,13 @@ broyalu.net
 brstu.ru
 brsu.brest.by
 bru.mogilev.by
+brucknerschule.com
 bryantschools.org
 bsaa.ru
 bsd48.org
 bseu.by
 bsl-lausanne.ch
+bsmartnow.com
 bsmu.by
 bspu.ru
 bstu.by
@@ -333,6 +338,7 @@ buap.mx
 bubhopal.nic.in
 buk.by
 bulehorauniversity.com
+bumail.net
 bundelkhanduniversity.org
 bundenet.com
 buraouniversity.com
@@ -353,6 +359,7 @@ carolus-magnus-university.eu
 carthagecsd.org
 cas.dhbw.de
 casa.unimo.it
+case.edu
 castelobranco.br
 cau.org.in
 cavendishza.org
@@ -379,6 +386,7 @@ ceunix.com.mx
 ceux.mx
 cfisd.net
 cfpj.com
+cfschools.org
 cgcc.cc.or.us
 chalmers.se
 chapingo.mx
@@ -495,6 +503,7 @@ deped.gov.ph
 depedlaspinas.ph
 depedmakati.ph
 depedmalaboncity.ph
+depedqc.ph
 deusto.es
 devinci.fr
 devry.ca
@@ -1088,6 +1097,7 @@ grenoble-inp.fr
 grinnell-k12.org
 groupe-esa.com
 groupeiscae.ma
+grps.org
 grsmu.by
 grsu.by
 gsba.ch
@@ -1204,6 +1214,7 @@ hotelschool.com.au
 hotelschool.nl
 houstonisd.org
 howest.be
+hpcsd.org
 hpuniv.nic.in
 hqgc.net
 hr.nl
@@ -1452,6 +1463,7 @@ jnpsd.org
 jodhpurnationaluniversity.com
 joensuu.fi
 jonesboroschools.net
+jpkeefehs.org
 jpte.hu
 jpthijsse.nl
 jpv.bih.nic.in
@@ -1772,6 +1784,7 @@ mischools.org
 misis.ru
 miu.by
 miu.ru
+miuandes.cl
 miun.se
 mkuhyd.com
 mkv2.mah.nic.in
@@ -1917,6 +1930,7 @@ nsac.ns.ca
 nsbm.lk
 nscad.ns.ca
 nsd.org
+nsd131.org
 nsmu.ru
 nstu.ru
 nsu.ru
@@ -1973,6 +1987,7 @@ ostonk12.org
 osu.cz
 osu.ru
 oth-aw.de
+othelloschools.org
 ou.dk
 ou.nl
 oulu.fi
@@ -2335,6 +2350,7 @@ springdaleeducation.com
 springfieldschool.online
 springisd.org
 sps.org
+spsd.us
 spsmma.com
 spu.ba
 spuniv.org
@@ -2442,6 +2458,7 @@ tbcc.cc.or.us
 tcd.ie
 tcsd.org
 tdiu.uz
+tdsb.on.ca
 tdtu.uz
 teachpublicschools.org
 teak.fi
@@ -3637,6 +3654,7 @@ washk12.org
 watfordboys.org
 wbuafs.nic.in
 wbut.net
+wcs-g.com
 wcusd.net
 wdsdjxy.com
 web.prover.com.br
@@ -3680,6 +3698,7 @@ wsps.waw.pl
 wsub.waw.pl
 wsz.pl
 wszib.krakow.pl
+wvu.edu
 wwu.de
 www2.mozcom.com
 wzmu.net
