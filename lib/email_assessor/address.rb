@@ -115,36 +115,23 @@ module EmailAssessor
     end
 
     def disposable?
-      domain_in_file?(EmailAssessor::DISPOSABLE_DOMAINS_FILE_NAME)
+      domain_in_list?(EmailAssessor.disposable_domains)
     end
 
     def blacklisted?
-      domain_in_file?(EmailAssessor::BLACKLISTED_DOMAINS_FILE_NAME)
+      domain_in_list?(EmailAssessor.blacklisted_domains)
     end
 
     def educational?
-      domain_in_file?(EmailAssessor::EDUCATIONAL_DOMAINS_FILE_NAME)
+      domain_in_list?(EmailAssessor.educational_domains)
     end
 
     def fastpass?
-      domain_in_file?(EmailAssessor::FASTPASS_DOMAINS_FILE_NAME)
-    end
-
-    def domain_in_file?(filename)
-      valid? && EmailAssessor.any_token_in_file?(domain_tokens, filename)
+      domain_in_list?(EmailAssessor.fastpass_domains)
     end
 
     def valid_mx?
       valid? && mx_servers.any?
-    end
-
-    def mx_server_is_in?(domain_list_file)
-      mx_servers.any? do |mx_server|
-        return false unless mx_server.respond_to?(:exchange)
-        mx_server = mx_server.exchange.to_s
-
-        EmailAssessor.domain_in_file?(mx_server, domain_list_file)
-      end
     end
 
     def mx_servers
@@ -156,6 +143,10 @@ module EmailAssessor
     end
 
     private
+
+    def domain_in_list?(list)
+      valid? && list.include_any?(domain_tokens)
+    end
 
     def domain_tokens
       @domain_tokens ||= EmailAssessor.tokenize_domain(@address.domain)

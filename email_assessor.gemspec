@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.email    = "wolfemm.development@gmail.com"
   spec.homepage = "https://github.com/wolfemm/email_assessor"
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = Dir.glob('lib/**/*') + Dir.glob('assets/**/*')
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]

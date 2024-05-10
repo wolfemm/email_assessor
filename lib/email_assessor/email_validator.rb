@@ -58,21 +58,5 @@ class EmailValidator < ActiveModel::EachValidator
     if options[:educational]
       error(record, attribute, error_type(:educational, options)) && return if address.educational?
     end
-
-    # if options[:domain_not_in]
-    #   matched_blocklist = options[:domain_not_in].select do |entry|
-    #     unless entry.key?(:blocklist)
-    #       fail "domain_not_in entries must be in format { blocklist: \"filename\"[, message: symbol|string] }"
-    #     end
-
-    #     next unless address.domain_in_blocklist?(entry[:blocklist])
-
-    #     error(record, attribute, entry[:message])
-
-    #     true
-    #   end
-
-    #   return if matched_blocklist
-    # end
   end
 end

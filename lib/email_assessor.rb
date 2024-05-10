@@ -1,41 +1,75 @@
 # frozen_string_literal: true
+
 require "email_assessor/email_validator"
+require "email_assessor/directory_domain_list"
+require "email_assessor/file_domain_list"
+require "email_assessor/empty_domain_list"
+require "email_assessor/domain_token_set"
 
 module EmailAssessor
-  DISPOSABLE_DOMAINS_FILE_NAME = File.expand_path("../../vendor/disposable_domains.txt", __FILE__)
-  FASTPASS_DOMAINS_FILE_NAME = File.expand_path("../../vendor/fastpass_domains.txt", __FILE__)
-  EDUCATIONAL_DOMAINS_FILE_NAME = File.expand_path("../../vendor/educational_domains.txt", __FILE__)
-  BLACKLISTED_DOMAINS_FILE_NAME = File.expand_path("vendor/blacklisted_domains.txt")
-
-  def self.domain_is_disposable?(domain)
-    domain_in_file?(domain, DISPOSABLE_DOMAINS_FILE_NAME)
-  end
-
-  def self.domain_is_blacklisted?(domain)
-    domain_in_file?(domain, BLACKLISTED_DOMAINS_FILE_NAME)
-  end
-
-  def self.domain_in_file?(domain, file_name)
-    any_token_in_file?(tokenize_domain(domain), file_name)
-  end
-
-  def self.any_token_in_file?(domain_tokens, file_name)
-    file_name ||= ""
-
-    File.foreach(file_name, chomp: true).any? do |line|
-      domain_tokens.key?(line)
-    end
-  end
-
-  def self.tokenize_domain(domain)
-    parts = domain.downcase.split(".")
-    tokens = {}
-
-    parts.length.times do
-      tokens[parts.join(".")] = nil
-      parts.shift
+  class << self
+    def tokenize_domain(domain)
+      EmailAssessor::DomainTokenSet.parse(domain)
     end
 
-    tokens
+    def [](pathname)
+      @domain_list_cache ||= {
+        # {pathname} => {domain list}
+      }
+
+      return @domain_list_cache[pathname] if @domain_list_cache.key?(pathname)
+
+      list = if File.directory?(pathname)
+        DirectoryDomainList.new(pathname)
+      elsif File.file?(pathname)
+        FileDomainList.new(pathname)
+      end
+
+      @domain_list_cache[pathname] = list
+
+      list
+    end
+
+    def disposable_domains
+      @disposable_domains ||= default_domain_list("disposable_domains")
+    end
+
+    def disposable_domains=(pathname)
+      @disposable_domains = self[pathname]
+    end
+
+    def blacklisted_domains
+      @blacklisted_domains ||= default_domain_list("blacklisted_domains")
+    end
+
+    def blacklisted_domains=(pathname)
+      @blacklisted_domains = self[pathname]
+    end
+
+    def educational_domains
+      @educational_domains ||= default_domain_list("educational_domains")
+    end
+
+    def educational_domains=(pathname)
+      @educational_domains = self[pathname]
+    end
+
+    def fastpass_domains
+      @fastpass_domains ||= default_domain_list("fastpass_domains")
+    end
+
+    def fastpass_domains=(pathname)
+      @fastpass_domains = self[pathname]
+    end
+
+    private
+
+    def default_domain_list(category)
+      self[File.expand_path("../../vendor/#{category}.txt", __FILE__)] ||
+        self[File.expand_path("../../vendor/#{category}", __FILE__)] ||
+        self[File.expand_path("../../assets/data/#{category}.txt", __FILE__)] ||
+        self[File.expand_path("../../assets/data/#{category}", __FILE__)] ||
+        EmptyDomainList.instance
+    end
   end
 end

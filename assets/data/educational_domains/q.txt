@@ -1,0 +1,4 @@
+qdnet.pl
+qdpi.uz
+queensu.ca
+questu.ca

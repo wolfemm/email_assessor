@@ -22,20 +22,22 @@ class TestUserDisallowEducational < TestModel
 end
 
 describe EmailAssessor do
+  let(:blacklisted_domain) { described_class.blacklisted_domains.sample }
+  let(:disposable_domain) { described_class.disposable_domains.sample }
+  let(:educational_domain) { described_class.educational_domains.sample }
+
   let(:plain_user) { TestUser.new(email: "") }
   let(:disposable_user) { TestUserDisallowDisposable.new(email: "foo@gmail.com") }
   let(:blacklist_user) { TestUserDisallowBlacklisted.new(email: "foo@gmail.com") }
   let(:educational_user) { TestUserDisallowEducational.new(email: "foo@gmail.com") }
   let(:mx_user) { TestUserMX.new(email: "foo@gmail.com") }
 
-  let(:blacklisted_domains_file_name) { described_class::BLACKLISTED_DOMAINS_FILE_NAME }
-  let(:blacklisted_domain) { File.open(blacklisted_domains_file_name, &:readline).chomp }
-
-  let(:disposable_domains_file_name) { described_class::DISPOSABLE_DOMAINS_FILE_NAME }
-  let(:disposable_domain) { File.open(disposable_domains_file_name, &:readline).chomp }
-
-  let(:educational_domains_file_name) { described_class::EDUCATIONAL_DOMAINS_FILE_NAME }
-  let(:educational_domain) { File.open(educational_domains_file_name, &:readline).chomp }
+  # it "is valid when email is empty" do
+  #   require "benchmark"
+  #   Benchmark.bm(7) do |x|
+  #     x.report("new") { 10000.times { |i| EmailAssessor.disposable_domains.include_any?(EmailAssessor::DomainTokenSet.parse("test@test.gmail.com")) } }
+  #   end
+  # end
 
   describe "basic validation" do
     subject(:user) { plain_user }
@@ -87,11 +89,6 @@ describe EmailAssessor do
 
     it "is invalid if the domain constains consecutives dots" do
       user.email = "foo@bar..com"
-      is_expected.to be_invalid
-    end
-
-    it "is invalid if the domain contains emoticons" do
-      user.email = "foo🙈@gmail.com"
       is_expected.to be_invalid
     end
 

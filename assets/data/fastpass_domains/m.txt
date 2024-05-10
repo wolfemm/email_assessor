@@ -1,0 +1,4 @@
+mail.com
+mail.ru
+me.com
+msn.com
