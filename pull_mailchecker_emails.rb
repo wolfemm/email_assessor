@@ -16,6 +16,8 @@ resp = Net::HTTP.get_response(URI.parse(url))
 
 remote_domains = (resp.body.split("\n")) - whitelisted_domains
 
-result_domains = SortedSet.new((existing_domains + remote_domains).map! { |domain| domain.strip.downcase })
+result_domains = Set.new((existing_domains + remote_domains).map! { |domain| domain.strip.downcase })
+result_domains = result_domains.to_a
+result_domains.sort!
 
-File.open("src/disposable_domains.txt", "w") { |f| f.write result_domains.to_a.join("\n") }
+File.open("src/disposable_domains.txt", "w") { |f| f.write result_domains.join("\n") }
