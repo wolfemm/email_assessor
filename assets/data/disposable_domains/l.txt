@@ -1263,6 +1263,7 @@ leabelvei.ml
 leaboehm.xyz
 leachim.com
 leachim.org
+leacore.com
 lead-contact.ru
 lead-maximum.ru
 lead-tour.ru
@@ -1718,6 +1719,7 @@ lendfox.com
 lendingshop.site
 lendlesssn.com
 lendoapp.co
+lendscape.com
 lenestate.ru
 lenfly.com
 lengworcomp.gq
