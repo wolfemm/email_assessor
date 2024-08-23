@@ -1045,6 +1045,7 @@ fupl.asso.fr
 furb.rct-sc.br
 furg.br
 fusdk12.net
+fwcsstudents.org
 fwisd.org
 g.nsu.ru
 gallus.pl
@@ -3698,6 +3699,7 @@ wsp.krakow.pl
 wsp.slupsk.pl
 wsp.zgora.pl
 wsps.waw.pl
+wssd115.org
 wsub.waw.pl
 wsz.pl
 wszib.krakow.pl

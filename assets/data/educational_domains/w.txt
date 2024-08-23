@@ -50,6 +50,7 @@ wsp.krakow.pl
 wsp.slupsk.pl
 wsp.zgora.pl
 wsps.waw.pl
+wssd115.org
 wsub.waw.pl
 wsz.pl
 wszib.krakow.pl
