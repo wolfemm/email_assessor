@@ -32,6 +32,7 @@ deped.gov.ph
 depedlaspinas.ph
 depedmakati.ph
 depedmalaboncity.ph
+depedpasay.ph
 depedqc.ph
 deusto.es
 devinci.fr

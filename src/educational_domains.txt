@@ -503,6 +503,7 @@ deped.gov.ph
 depedlaspinas.ph
 depedmakati.ph
 depedmalaboncity.ph
+depedpasay.ph
 depedqc.ph
 deusto.es
 devinci.fr
@@ -3528,6 +3529,7 @@ utm.mx
 utm.my
 utm.rnu.tn
 utm.ro
+utm.tn
 utm.utoronto.ca
 utmn.ru
 utoronto.ca
