@@ -2,3 +2,4 @@ qdnet.pl
 qdpi.uz
 queensu.ca
 questu.ca
+qub.ac.uk

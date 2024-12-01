@@ -2107,6 +2107,7 @@ pub.ro
 puc-rio.br
 puccamp.br
 pucminas.br
+pucp.pe
 pucpr.br
 pucrs.br
 pucsp.br
@@ -2131,6 +2132,7 @@ pwu.com
 pz.zgora.pl
 qdnet.pl
 qdpi.uz
+qub.ac.uk
 queensu.ca
 questu.ca
 r9tigermail.org
