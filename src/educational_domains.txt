@@ -51,6 +51,7 @@ academiaga.ru
 academy.mia.by
 academy.sumy.ua
 acadiau.ca
+accademiasantagiulia.it
 aceondo-ng.com
 acg.gr
 acighana.org
@@ -369,6 +370,7 @@ cbs.de
 cbs.dk
 cbu2000.com
 ccbc.ca
+cccb.edu
 ccs-student.org
 ccsd89.me
 ccsk12.com
@@ -1200,6 +1202,7 @@ himh.de
 himolde.no
 hindsschools.com
 his.se
+hitam.org
 hj.se
 hjs.uni-heidelberg.de
 hkkk.fi
@@ -1291,6 +1294,7 @@ ibp-moscow.ru
 ibs.uz
 ibss.eu
 icam.fr
+icdavincicarducci.it
 icfai.org
 ichec.be
 ici-luzern.com
@@ -2667,6 +2671,7 @@ uartdcluj.ro
 uas.cl
 uas.mx
 uasbng.kar.nic.in
+uaschools.org
 uasd.net
 uaslp.mx
 uasm.md

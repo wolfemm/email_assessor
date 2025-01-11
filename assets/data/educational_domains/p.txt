@@ -104,6 +104,7 @@ pub.ro
 puc-rio.br
 puccamp.br
 pucminas.br
+pucp.pe
 pucpr.br
 pucrs.br
 pucsp.br
@@ -126,4 +127,3 @@ pwsz.eu
 pwsz.pila.pl
 pwu.com
 pz.zgora.pl
-pucp.pe
