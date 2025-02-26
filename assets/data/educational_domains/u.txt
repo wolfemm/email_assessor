@@ -64,6 +64,7 @@ uartdcluj.ro
 uas.cl
 uas.mx
 uasbng.kar.nic.in
+uaschools.org
 uasd.net
 uaslp.mx
 uasm.md
@@ -974,4 +975,3 @@ uy1.uninet.cm
 uz.rnu.tn
 uzh.ch
 uzswlu.uz
-uaschools.org

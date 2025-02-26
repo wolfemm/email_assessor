@@ -71,6 +71,7 @@ himh.de
 himolde.no
 hindsschools.com
 his.se
+hitam.org
 hj.se
 hjs.uni-heidelberg.de
 hkkk.fi
@@ -145,4 +146,3 @@ hwemail.com
 hwg-lu.de
 hwp-hamburg.de
 hzs.be
-hitam.org

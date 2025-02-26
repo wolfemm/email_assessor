@@ -15,6 +15,7 @@ ibp-moscow.ru
 ibs.uz
 ibss.eu
 icam.fr
+icdavincicarducci.it
 icfai.org
 ichec.be
 ici-luzern.com
@@ -177,4 +178,3 @@ iusspavia.it
 ivo-deurne.nl
 ivri.nic.in
 iztapalapa.uam.mx
-icdavincicarducci.it

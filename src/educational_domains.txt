@@ -375,12 +375,14 @@ ccs-student.org
 ccsd89.me
 ccsk12.com
 ccsk12.net
+ccsstudent.org
 ccsuniversity.org
 cdsbk12.ca
 ceaprc.org
 centennialcollege.ca
 central.ucv.ro
 centrale-marseille.fr
+cepluispasteur.cl
 cesi.fr
 ceti.mx
 cetys.mx
@@ -551,6 +553,7 @@ dpcdsb.org
 dpsk12.net
 dpu.dk
 drk.hu
+dsb1.ca
 dsc.dm
 dshs-koeln.de
 dstu.dp.ua
@@ -1465,6 +1468,7 @@ jcu.cz
 jedlik.eu
 jeffcoschools.us
 jeffstateonline.com
+jemicyschool.org
 jenseneducation.se
 jhubc.it
 jku.at
@@ -1981,6 +1985,7 @@ omgtu.ru
 omgups.ru
 oml.pt
 omsk-osma.ru
+one-bosco.org
 ontariotechu.ca
 ontariotechu.net
 op.org
@@ -2127,6 +2132,7 @@ pust.urbe.it
 put.poznan.pl
 puv.fi
 pv-ma.bg
+pvpusd.net
 pwr.wroc.pl
 pwschools.org
 pwst.krakow.pl
